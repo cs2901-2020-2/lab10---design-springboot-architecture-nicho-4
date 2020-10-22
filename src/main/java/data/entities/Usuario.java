@@ -59,7 +59,7 @@ public class Usuario implements Serializable {
     @Column(name = "nombreCompleto", unique = true)
     private String nombreCompleto;
 
-    public Usuario(String hash, int sexo, Long codigo, String primerNombre, int vigencia, String apellidoPaterno, String apellidoMaterno, String email, String nombre, String passwd, String segundoNombre, Date fechaCese, String dni, String nombreCompleto) {
+    public Usuario(String hash, int sexo, Long codigo, String primerNombre, int vigencia, String apellidoPaterno, String apellidoMaterno, String email, String nombre, String passwd, String segundoNombre, Date fechaCese, String dni) {
         this.hash = hash;
         this.sexo = sexo;
         this.codigo = codigo;
@@ -73,7 +73,9 @@ public class Usuario implements Serializable {
         this.segundoNombre = segundoNombre;
         this.fechaCese = fechaCese;
         this.dni = dni;
-        this.nombreCompleto = nombreCompleto;
+    }
+
+    public Usuario(String hash, int sexo, int i, String luis, int vigencia, String cordero, String pinela, String email, String luis_alejandro, String gatito43, String alejandro, int i1, String dni) {
     }
 
     public String getHash() {
@@ -181,6 +183,7 @@ public class Usuario implements Serializable {
     }
 
     public String getNombreCompleto() {
+        nombreCompleto = nombre + " " + apellidoMaterno + " " + apellidoPaterno;
         return nombreCompleto;
     }
 

@@ -16,6 +16,10 @@
 
     <properties>
         <java.version>1.8</java.version>
+        <sonar.projectKey>cs2901-2020-2_lab10---design-springboot-architecture-nicho-4</sonar.projectKey>
+        <sonar.organization>cs2901-2020-2</sonar.organization>
+        <sonar.host.url>https://sonarcloud.io</sonar.host.url>
+        <sonar.login>87cc04325bbe091d6718a4668f470d4fb882e3fd</sonar.login>
     </properties>
 
     <dependencies>
