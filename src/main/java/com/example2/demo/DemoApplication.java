@@ -9,12 +9,16 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
+import java.util.logging.Logger;
+
 
 @SpringBootApplication(exclude = { SecurityAutoConfiguration.class })
 @ComponentScan({"controller", "business" })
 @EntityScan("data")
 @EnableJpaRepositories("data.repositories")
 public class DemoApplication extends SpringBootServletInitializer implements WebMvcConfigurer{
+
+    static final Logger logger = Logger.getLogger(DemoApplication.class.getName());
 
     public static void main(String[] args) {
         SpringApplication.run(DemoApplication.class, args);
