@@ -42,7 +42,7 @@ public class AuthenticationController {
     }
 
     @DeleteMapping("/{codigo}")
-    void delete(@PathVariable Long codigo){
+    public void delete(@PathVariable Long codigo){
         service.delete(codigo);
     }
 }
