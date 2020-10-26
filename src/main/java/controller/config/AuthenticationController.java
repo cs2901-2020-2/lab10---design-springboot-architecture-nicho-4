@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@RestController
+@RequestMapping("/usuarios")
 public class AuthenticationController {
 
     @Autowired
@@ -24,6 +26,7 @@ public class AuthenticationController {
         return service.findOne(codigo);
     }
 
+    @GetMapping("/{email}")
     public Usuario readByEmail(@PathVariable String email){
         return service.findOneByEmail(email);
     }

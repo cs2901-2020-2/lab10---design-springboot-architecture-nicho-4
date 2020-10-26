@@ -1,21 +1,22 @@
 package data.entities;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.google.common.hash.Hashing;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.nio.charset.StandardCharsets;
 import java.util.Date;
-import java.util.HashSet;
-import java.util.Set;
 
 @Entity
 @Table(name = "usuario")
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
-public class Usuario implements Serializable {
+public class Usuario implements Serializable{
+
+    private static final long serialVersionUID = 1L;
+
+    @Id
+    @Column(name = "usuario_id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
     @Column(name = "hash")
     private String hash;
@@ -59,6 +60,8 @@ public class Usuario implements Serializable {
     @Column(name = "nombreCompleto", unique = true)
     private String nombreCompleto;
 
+    public Usuario(){}
+
     public Usuario(String hash, int sexo, Long codigo, String primerNombre, int vigencia, String apellidoPaterno, String apellidoMaterno, String email, String nombre, String passwd, String segundoNombre, Date fechaCese, String dni) {
         this.hash = hash;
         this.sexo = sexo;
@@ -75,7 +78,11 @@ public class Usuario implements Serializable {
         this.dni = dni;
     }
 
-    public Usuario(String hash, int sexo, int i, String luis, int vigencia, String cordero, String pinela, String email, String luis_alejandro, String gatito43, String alejandro, int i1, String dni) {
+    public Long getId() {
+        return id;
+    }
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getHash() {
