@@ -16,32 +16,32 @@ public class AuthenticationController {
 
     //CRUD  CREATE (POST) , READ (GET), UPDATE (PUT), DELETE (DELETE)
 
-    @GetMapping
+    @GetMapping //It works
     public List<Usuario> readAll(){
         return service.findAll();
     }
 
-    @GetMapping("/{codigo}")
-    public Usuario read(@PathVariable Long codigo) throws Exception {
+    @GetMapping("/{codigo}") //It works
+    public Usuario read(@PathVariable ("codigo") Long codigo){
         return service.findOne(codigo);
     }
 
-    @GetMapping("/{email}")
-    public Usuario readByEmail(@PathVariable String email){
+    @GetMapping("/readByEmail/{email}") //It works
+    public Usuario readByEmail(@PathVariable ("email") String email){
         return service.findOneByEmail(email);
     }
 
-    @PostMapping
+    @PostMapping //It works
     public Usuario create(@RequestBody Usuario newUsuario) {
         return service.create(newUsuario);
     }
 
-    @PutMapping("/{codigo}")
+    @PutMapping("/{codigo}") //It works
     public Usuario update(@RequestBody Usuario newUsuario, @PathVariable Long codigo){
         return service.update(newUsuario, codigo);
     }
 
-    @DeleteMapping("/{codigo}")
+    @DeleteMapping("/{codigo}") //It works
     public void delete(@PathVariable Long codigo){
         service.delete(codigo);
     }

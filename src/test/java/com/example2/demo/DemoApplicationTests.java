@@ -1,16 +1,15 @@
 package com.example2.demo;
 
 import business.UsuarioService;
-import org.testng.annotations.Test;
 import data.entities.Usuario;
 import data.repositories.UsuarioRepository;
-//import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.context.junit4.SpringRunner;
+import org.testng.annotations.Test;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -19,6 +18,8 @@ import java.util.stream.Stream;
 
 import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.when;
+
+//import org.junit.jupiter.api.Test;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
