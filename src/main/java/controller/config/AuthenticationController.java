@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.net.URI;
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/usuarios/")
@@ -25,12 +26,12 @@ public class AuthenticationController {
     }
 
     @GetMapping("/{codigo}") //It works
-    public ResponseEntity<Usuario> read(@PathVariable ("codigo") Long codigo){
+    public ResponseEntity<Optional<Usuario>> read(@PathVariable ("codigo") Long codigo){
         return ResponseEntity.ok(service.findOne(codigo));
     }
 
-    @GetMapping("/readByEmail/{email}") //It works
-    public ResponseEntity<Usuario> readByEmail(@PathVariable ("email") String email){
+    @GetMapping("/readByEmai/{email}") //It works
+    public ResponseEntity<Optional<Usuario>> readByEmail(@PathVariable ("email") String email){
         return ResponseEntity.ok(service.findOneByEmail(email));
     }
 

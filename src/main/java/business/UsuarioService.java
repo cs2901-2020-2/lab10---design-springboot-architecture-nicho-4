@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @Transactional
@@ -23,13 +24,13 @@ public class UsuarioService {
         return repository.save(newUsuario);
     }
 
-    public Usuario findOne(Long codigo){
+    public Optional<Usuario> findOne(Long codigo){
         for (Usuario item : repository.findAll()){
             if (item.getCodigo() != null && item.getCodigo().equals(codigo)){
-                return repository.findById(item.getId()).orElseThrow(() -> new UsuarioNotFoundException(item.getId()));
+                return repository.findById(item.getId());
             }
         }
-        return null;
+        return Optional.empty();
     }
 
     public Usuario update(Usuario newUsuario, Long codigo){
@@ -66,13 +67,13 @@ public class UsuarioService {
         }
     }
 
-    public Usuario findOneByEmail(String email) {
+    public Optional<Usuario> findOneByEmail(String email) {
         for (Usuario item : repository.findAll()){
             if (item.getEmail() != null && item.getEmail().equals(email)){
-                return repository.findById(item.getId()).orElseThrow(() -> new UsuarioNotFoundException(item.getId()));
+                return repository.findById(item.getId());
             }
         }
-        return null;
+        return Optional.empty();
     }
 
 }
