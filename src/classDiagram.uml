@@ -3,15 +3,50 @@
   <ID>JAVA</ID>
   <OriginalElement />
   <nodes>
-    <node x="0.0" y="534.0">business.UsuarioService</node>
-    <node x="461.0" y="534.0">data.repositories.UsuarioRepository</node>
-    <node x="572.0" y="0.0">controller.config.AuthenticationController</node>
-    <node x="0.0" y="0.0">data.entities.Usuario</node>
-    <node x="261.0" y="534.0">com.example2.demo.DemoApplication</node>
+    <node x="137.58333333333331" y="664.0">business.UsuarioService</node>
+    <node x="0.0" y="539.0">data.repositories.UsuarioRepository</node>
+    <node x="194.83333333333331" y="919.0">controller.config.AuthenticationController</node>
+    <node x="641.9166666666666" y="0.0">com.example2.demo.DemoApplication</node>
+    <node x="69.91666666666666" y="0.0">data.entities.Usuario</node>
   </nodes>
   <notes />
-  <edges />
-  <settings layout="Hierarchic Group" zoom="0.5000000000000001" x="91.82142857142867" y="446.17857142857133" />
+  <edges>
+    <edge source="controller.config.AuthenticationController" target="data.entities.Usuario">
+      <point x="55.0" y="-102.5" />
+      <point x="359.8333333333333" y="894.0" />
+      <point x="371.3333333333333" y="894.0" />
+      <point x="371.3333333333333" y="514.0" />
+      <point x="509.08333333333326" y="514.0" />
+      <point x="175.66666666666663" y="244.5" />
+    </edge>
+    <edge source="business.UsuarioService" target="data.repositories.UsuarioRepository">
+      <point x="-54.0" y="-102.5" />
+      <point x="191.58333333333331" y="639.0" />
+      <point x="165.5" y="639.0" />
+      <point x="0.0" y="37.5" />
+    </edge>
+    <edge source="controller.config.AuthenticationController" target="business.UsuarioService">
+      <point x="-55.0" y="-102.5" />
+      <point x="249.83333333333331" y="894.0" />
+      <point x="245.58333333333331" y="894.0" />
+      <point x="0.0" y="102.5" />
+    </edge>
+    <edge source="data.repositories.UsuarioRepository" target="data.entities.Usuario">
+      <point x="0.0" y="-37.5" />
+      <point x="165.5" y="514.0" />
+      <point x="157.75" y="514.0" />
+      <point x="-175.66666666666666" y="244.5" />
+    </edge>
+    <edge source="business.UsuarioService" target="data.entities.Usuario">
+      <point x="54.0" y="-102.5" />
+      <point x="299.5833333333333" y="639.0" />
+      <point x="341.5" y="639.0" />
+      <point x="341.5" y="514.0" />
+      <point x="333.41666666666663" y="514.0" />
+      <point x="0.0" y="244.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.5000000000000001" x="92.0" y="446.0" />
   <SelectedNodes>
     <node>controller.config.AuthenticationController</node>
   </SelectedNodes>
