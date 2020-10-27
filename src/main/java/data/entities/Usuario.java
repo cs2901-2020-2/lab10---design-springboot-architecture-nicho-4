@@ -60,22 +60,8 @@ public class Usuario implements Serializable{
     @Column(name = "nombreCompleto", unique = true)
     private String nombreCompleto;
 
-    public Usuario(){}
-
-    public Usuario(String hash, int sexo, Long codigo, String primerNombre, int vigencia, String apellidoPaterno, String apellidoMaterno, String email, String nombre, String passwd, String segundoNombre, Date fechaCese, String dni) {
-        this.hash = hash;
-        this.sexo = sexo;
-        this.codigo = codigo;
-        this.primerNombre = primerNombre;
-        this.vigencia = vigencia;
-        this.apellidoPaterno = apellidoPaterno;
-        this.apellidoMaterno = apellidoMaterno;
-        this.email = email;
-        this.nombre = nombre;
-        this.passwd = passwd;
-        this.segundoNombre = segundoNombre;
-        this.fechaCese = fechaCese;
-        this.dni = dni;
+    public Usuario(){
+        //Default constructor
     }
 
     public Long getId() {
