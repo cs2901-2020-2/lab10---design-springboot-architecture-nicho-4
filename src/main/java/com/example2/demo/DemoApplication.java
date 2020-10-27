@@ -18,7 +18,7 @@ import java.util.logging.Logger;
 @EnableJpaRepositories("data.repositories")
 public class DemoApplication extends SpringBootServletInitializer implements WebMvcConfigurer{
 
-    static final Logger logger = Logger.getLogger(DemoApplication.class.getName());
+    static final Logger log = Logger.getLogger(DemoApplication.class.getName());
 
     public static void main(String[] args) {
         SpringApplication.run(DemoApplication.class, args);

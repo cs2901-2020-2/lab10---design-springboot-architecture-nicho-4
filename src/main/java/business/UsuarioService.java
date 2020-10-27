@@ -59,9 +59,11 @@ public class UsuarioService {
     }
 
     public void delete(Long codigo){
-        for (Usuario item : repository.findAll())
-            if (item.getCodigo() != null && item.getCodigo().equals(codigo))
-        repository.deleteById(item.getId());
+        for (Usuario item : repository.findAll()){
+            if (item.getCodigo() != null && item.getCodigo().equals(codigo)){
+                repository.deleteById(item.getId());
+            }
+        }
     }
 
     public Usuario findOneByEmail(String email) {
